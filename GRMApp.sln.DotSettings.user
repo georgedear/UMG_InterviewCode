@@ -3,5 +3,8 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e245076f_002D41cb_002D4877_002D823d_002D6d2975b91939/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetContracts_ValidInput_MustReturnContractsMatchingPartnerUsage" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::DB7A8139-B7A4-4353-9E6B-E283D92EEECF::net10.0::GRMApp.Test.Services.ContractServiceTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::DB7A8139-B7A4-4353-9E6B-E283D92EEECF::net10.0::GRMApp.Test.Readers.SourceDataReaderTests.ParseDate_WhenValidDateString_MustReturnDate&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::DB7A8139-B7A4-4353-9E6B-E283D92EEECF::net10.0::GRMApp.Test.Readers.SourceDataReaderTests.ParseDate_WhenMonthIsAbbreviated_MustReturnDate&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::DB7A8139-B7A4-4353-9E6B-E283D92EEECF::net10.0::GRMApp.Test.Readers.SourceDataReaderTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

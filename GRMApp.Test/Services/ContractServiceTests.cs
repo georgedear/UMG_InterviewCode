@@ -84,7 +84,7 @@ public class ContractServiceTests
     // Tests provided from instructions
     // Test Scenario 1
     [Fact]
-    public void WhenTestScenario1_MustReturnExpectedOutput()
+    public void GetContracts_WhenTestScenario1_MustReturnExpectedOutput()
     {
         // Arrange
         _mockReader.ParseDate(Arg.Any<string>()).Returns(new DateOnly(2012, 3, 1));
@@ -99,7 +99,7 @@ public class ContractServiceTests
     
     // Test Scenario 2
     [Fact]
-    public void WhenTestScenario2_MustReturnExpectedOutput()
+    public void GetContracts_WhenTestScenario2_MustReturnExpectedOutput()
     {
         // Arrange
         _mockReader.ParseDate(Arg.Any<string>()).Returns(new DateOnly(2012, 4, 1));
@@ -114,7 +114,7 @@ public class ContractServiceTests
     
     // Test Scenario 3
     [Fact]
-    public void WhenTestScenario3_MustReturnExpectedOutput()
+    public void GetContracts_WhenTestScenario3_MustReturnExpectedOutput()
     {
         // Arrange
         _mockReader.ParseDate(Arg.Any<string>()).Returns(new DateOnly(2012, 12, 27));
