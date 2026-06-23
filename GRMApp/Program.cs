@@ -6,7 +6,11 @@ class Program
 {
     static void Main()
     {
-        var data = SourceDataReader.ReadMusicLicenses(@"TextFiles\MusicContracts.txt");
+        var musicContracts = SourceDataReader
+            .ReadMusicContracts(@"TextFiles\MusicContracts.txt");
+        
+        var distributionContracts = SourceDataReader
+            .ReadDistributionContracts(@"TextFiles\DistributionContracts.txt");
         
         Console.WriteLine("Hello world");
     }

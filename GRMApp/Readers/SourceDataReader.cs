@@ -6,7 +6,7 @@ namespace GRMApp.Readers;
 
 public static class SourceDataReader
 {
-    public static List<MusicContract> ReadMusicLicenses(string filePath)
+    public static List<MusicContract> ReadMusicContracts(string filePath)
     {
         return File.ReadAllLines(filePath)
             .Skip(1)
@@ -21,6 +21,23 @@ public static class SourceDataReader
                     Usages:    parts[2].Split(',').Select(u => u.Trim()).ToList(),
                     StartDate: ParseDate(parts[3].Trim()),
                     EndDate:   string.IsNullOrWhiteSpace(parts[4]) ? null : ParseDate(parts[4].Trim())
+                );
+            })
+            .ToList();
+    }
+    
+    public static List<DistributionContract> ReadDistributionContracts(string filePath)
+    {
+        return File.ReadAllLines(filePath)
+            .Skip(1)
+            .Where(line => !string.IsNullOrWhiteSpace(line))
+            .Select(line =>
+            {
+                var parts = line.Split('|');
+                
+                return new DistributionContract(
+                    Partner: parts[0].Trim(),
+                    Usage:   parts[1].Trim()
                 );
             })
             .ToList();
