@@ -18,7 +18,7 @@ public static class SourceDataReader
                 return new MusicContract(
                     Artist:    parts[0].Trim(),
                     Title:     parts[1].Trim(),
-                    Usages:    parts[2].Split(',').Select(u => u.Trim()).ToList(),
+                    Usages:    parts[2].Split(',').Select(x => x.Trim()).ToList(),
                     StartDate: ParseDate(parts[3].Trim()),
                     EndDate:   string.IsNullOrWhiteSpace(parts[4]) ? null : ParseDate(parts[4].Trim())
                 );
@@ -43,7 +43,7 @@ public static class SourceDataReader
             .ToList();
     }
 
-    private static DateOnly ParseDate(string date)
+    public static DateOnly ParseDate(string date)
     {
         var cleaned = Regex.Replace(date, @"(\d+)(st|nd|rd|th)", "$1");
         return DateOnly.ParseExact(cleaned, ["d MMM yyyy", "d MMMM yyyy"], CultureInfo.InvariantCulture);
