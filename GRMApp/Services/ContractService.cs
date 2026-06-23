@@ -25,6 +25,7 @@ public class ContractService(ISourceDataReader reader)
         var distributionContracts = reader
             .ReadDistributionContracts(@"TextFiles\DistributionContracts.txt");
 
+        // Could handle this alternatively by exiting early with message
         var chosenUsage = distributionContracts
             .Single(x => x.Partner.ToLowerInvariant() == inputDeliveryPartner.ToLowerInvariant()).Usage;
 
