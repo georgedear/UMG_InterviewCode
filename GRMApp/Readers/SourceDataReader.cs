@@ -4,9 +4,16 @@ using GRMApp.Models;
 
 namespace GRMApp.Readers;
 
-public static class SourceDataReader
+public interface ISourceDataReader
 {
-    public static List<MusicContract> ReadMusicContracts(string filePath)
+    List<MusicContract> ReadMusicContracts(string filePath);
+    List<DistributionContract> ReadDistributionContracts(string filePath);
+    DateOnly ParseDate(string date);
+}
+
+public class SourceDataReader: ISourceDataReader
+{
+    public List<MusicContract> ReadMusicContracts(string filePath)
     {
         return File.ReadAllLines(filePath)
             .Skip(1)
@@ -26,7 +33,7 @@ public static class SourceDataReader
             .ToList();
     }
     
-    public static List<DistributionContract> ReadDistributionContracts(string filePath)
+    public List<DistributionContract> ReadDistributionContracts(string filePath)
     {
         return File.ReadAllLines(filePath)
             .Skip(1)
@@ -43,7 +50,7 @@ public static class SourceDataReader
             .ToList();
     }
 
-    public static DateOnly ParseDate(string date)
+    public DateOnly ParseDate(string date)
     {
         var cleaned = Regex.Replace(date, @"(\d+)(st|nd|rd|th)", "$1");
         return DateOnly.ParseExact(cleaned, ["d MMM yyyy", "d MMMM yyyy"], CultureInfo.InvariantCulture);
