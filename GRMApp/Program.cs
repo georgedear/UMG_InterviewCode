@@ -16,7 +16,7 @@ class Program
             .GetContracts(args)
             .ToList();
 
-        // Print header, could check for empty filteredContracts
+        // Print header
         Console.WriteLine("Artist|Title|Usages|StartDate|EndDate");
         foreach (var contract in filteredContracts)
         {

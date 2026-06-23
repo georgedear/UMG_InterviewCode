@@ -34,7 +34,7 @@ public class ContractService(ISourceDataReader reader)
             .Where(contract => contract.Usages.Contains(chosenUsage))
             .Where(contract => contract.StartDate <= inputEffectiveDate &&
                                (contract.EndDate is null || contract.EndDate >= inputEffectiveDate))
-            .OrderBy(contract => contract.Artist) // Assumed sort by first two fields
+            .OrderBy(contract => contract.Artist) // Assumed sort by first two fields (based on provided test data)
             .ThenBy(contract => contract.Title);
     }
 }
